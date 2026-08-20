@@ -50,7 +50,11 @@ RESOLUTION="$IMAGEWIDTH"x"$IMAGEHEIGHT";
 
 $PARAM_MOGRIFY -resize $RESOLUTION -colors 256 $INTERMEDIATES/*/*.png;
 
-echo "$IMAGESCALEWIDTH $IMAGESCALEHEIGHT 60" > $INTERMEDIATES/desc.txt;
-cat $PARAM_DESC_TXT >> $INTERMEDIATES/desc.txt
+echo "580 152 60" > $INTERMEDIATES/desc.txt;
+echo "c 1 30 part0" >> $INTERMEDIATES/desc.txt;
+echo "c 1 0 part1" >> $INTERMEDIATES/desc.txt;
+echo "c 0 0 part2" >> $INTERMEDIATES/desc.txt;
+echo "c 1 64 part3" >> $INTERMEDIATES/desc.txt;
+echo "c 1 15 part4" >> $INTERMEDIATES/desc.txt;
 
 $PARAM_SOONG_ZIP -L 0 -o $PARAM_OUT -C $INTERMEDIATES -D $INTERMEDIATES
